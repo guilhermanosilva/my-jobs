@@ -1,28 +1,17 @@
 /* eslint-disable no-console */
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import generateDateDifference from '../../utils/generateDateDifference';
 
 import Verified from '../../assets/images/Verified.svg';
 import Clock from '../../assets/images/Clock.svg';
+import { UserContext } from '../../providers/UserProvider';
 
 import { PerfilImage, ContainerUserInfo } from './styles';
 
 function UserInfo() {
-  const [user, setUser] = useState([]);
+  const user = useContext(UserContext);
   const [workTimer, setWorkTimer] = useState('');
-
-  useEffect(() => {
-    fetch('https://api.jsonbin.io/b/6169fc159548541c29c3c658', {
-      method: 'GET',
-      headers: { 'Content-Type': 'application/json' },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setUser(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
 
   useEffect(() => {
     setWorkTimer(generateDateDifference(user.created_at));
