@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Desafio Closer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Descrição do desafio
 
-## Available Scripts
+Yuji Itadori é um Pro que trabalha a bastante tempo com a Closeer na função de exorcista jujutsu, realizando diversos jobs todos os anos. Google Calendar e afins não existem na dimensão onde Yuji vive, por esse motivo ele sentia falta de uma ferramenta em que pudesse marcar e organizar seus jobs agendados, sabendo o dia e a hora de início de cada job e tendo um histórico de todos os jobs realizados no ano.
+Foi aí que Yuji decidiu pedir sua ajuda para desenvolver uma mini plataforma onde ele pudesse cadastrar seus jobs separando-os em 3 categorias:
 
-In the project directory, you can run:
+Jobs que já iniciaram, quando a data e hora do job já ultrapassou a data e hora atual.
+Jobs que estão próximos de iniciar, quando a diferença de tempo entre a data e hora do início do job e a data e hora atual é menor que 12 horas.
+Jobs para o futuro, quando qualquer job marcado iniciará pelo menos 12 horas da data e hora atual.
 
-### `yarn start`
+## Requisitos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Seguir interface proposta: https://bit.ly/3AEcym7
+- Os dados de Yuji devem ser consumidos de um arquivo .JSON, simulando o consumo de dados de uma API.
+- A agenda de Yuji apenas guarda as datas dos jobs do ano corrente, dessa forma, como estamos no ano de 2021, a agenda não aceitará datas cujos anos sejam [...2018, 2019, 2020, 2022, 2023...]
+- Yuji é um pouco distraído e ganancioso e provavelmente tentará colocar vários jobs em uma mesma data - hora. Quando Yuji tentar fazer isso, um alerta deve ser exibido informando que há um conflito e que Yuji já tem um job para aquela data - hora agendado, afinal, Yuji não desenvolveu sua expansão de domínio para poder estar em dois lugares ao mesmo tempo.
+- Ao adicionar um novo job na agenda, o formulário deve ser resetado, para estar pronto para uma nova inserção.
+- A cada novo job inserido, a listagem de jobs na agenda deve ser ordenada de forma cronológica.
+- Ao provocar um :hover nos círculos indicadores de categoria da agenda e de cada job, o Tooltip (um balão flutuante informativo) corresponde deve ser exibido.
+- O projeto deve ser construído utilizando React
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**Diferencial:**
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Atualizar a data e hora atual no Header, semelhante a um relógio.
+Atualizar a listagem na agenda periodicamente, para modificar os status de cada job agendado (já iniciou, próximo de iniciar, para o futuro) de acordo com a data - hora corrente.
