@@ -1,19 +1,18 @@
 import UserInfo from '../UserInfo';
-
-import CurrentDate from '../CurrentDate';
+import Header from '../Header';
 
 import GlobalStyle from '../../styles/global';
-import { Container, Header } from './styles';
+import { Container, UserSection } from './styles';
 
 function Layout() {
   return (
     <>
       <GlobalStyle />
+      <Header />
       <Container>
-        <Header>
-          <CurrentDate />
+        <UserSection>
           <UserInfo />
-        </Header>
+        </UserSection>
         <main>Main</main>
       </Container>
     </>
