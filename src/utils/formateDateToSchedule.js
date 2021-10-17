@@ -1,3 +1,5 @@
+import addZero from './addZero';
+
 function formatDateToSchedule({ date, hour, minute }) {
   const shortDate = [
     'jan', 'fev', 'mar', 'abr', 'mai', 'jun',
@@ -22,7 +24,9 @@ function formatDateToSchedule({ date, hour, minute }) {
       return formatMinute;
     }
 
-    formatMinute = `:${minutes}`;
+    formatMinute = addZero(minutes);
+
+    formatMinute = `:${formatMinute}`;
     return formatMinute;
   }
 
