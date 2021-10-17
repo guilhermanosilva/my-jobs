@@ -26,4 +26,8 @@ const UserSection = styled.section`
   align-items: center;
 `;
 
-export { Container, UserSection };
+const ScheduleSection = styled.section`
+  width: 43.5rem;
+`;
+
+export { Container, UserSection, ScheduleSection };

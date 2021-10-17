@@ -12,7 +12,8 @@ export default createGlobalStyle`
     --webkit-text-size-adjust: 100%--webkit-text-size-adjust;
   }
 
-  body {
+  body, input, button {
+    color: #1f1f1f;
     font-family: 'Mulish', sans-serif;
   }
 `;

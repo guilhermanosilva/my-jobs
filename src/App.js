@@ -1,13 +1,13 @@
 import Layout from './components/Layout';
 
-import UserProvider from './providers/UserProvider';
+import GlobalProvider from './providers';
 
 function App() {
   return (
     <div>
-      <UserProvider>
+      <GlobalProvider>
         <Layout />
-      </UserProvider>
+      </GlobalProvider>
     </div>
   );
 }

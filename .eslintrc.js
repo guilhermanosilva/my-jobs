@@ -18,6 +18,7 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/jsx-no-bind': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
