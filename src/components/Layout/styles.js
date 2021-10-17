@@ -27,7 +27,8 @@ const UserSection = styled.section`
 `;
 
 const ScheduleSection = styled.section`
-  width: 43.5rem;
+  margin: 1rem;
+  max-width: 43.5rem;
 `;
 
 export { Container, UserSection, ScheduleSection };

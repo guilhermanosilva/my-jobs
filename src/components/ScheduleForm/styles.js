@@ -31,16 +31,6 @@ const Input = styled.input`
     color: #9f9f9f;
     font-weight: normal;
   }
-
-  /* &[type=number]::-webkit-inner-spin-button { 
-    -webkit-appearance: none;
-  }
-  
-  &[type='number'] {
-    -mox-appearance: none;
-    appearance: none;
-    width: 7.1875rem;
-  } */
 `;
 
 const InputDate = styled(Input)`

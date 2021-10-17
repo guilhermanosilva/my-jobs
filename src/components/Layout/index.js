@@ -2,9 +2,11 @@ import UserInfo from '../UserInfo';
 import Header from '../Header';
 
 import GlobalStyle from '../../styles/global';
-import { Container, ScheduleSection, UserSection } from './styles';
 import Welcome from '../Welcome';
 import ScheduleForm from '../ScheduleForm';
+import ScheduleList from '../ScheduleList';
+
+import { Container, ScheduleSection, UserSection } from './styles';
 
 function Layout() {
   return (
@@ -19,6 +21,7 @@ function Layout() {
           <ScheduleSection>
             <Welcome />
             <ScheduleForm />
+            <ScheduleList />
           </ScheduleSection>
         </main>
       </Container>

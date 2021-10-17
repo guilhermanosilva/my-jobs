@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 import Calendar from '../../assets/images/Calendar.svg';
 import { ScheduleContext } from '../../providers/ScheduleProvider';
-import formatDateToSchedule from '../../utils/formateDateToSchedule';
 
 import {
   Form, InputDate, Input, ScheduleButton,
@@ -58,7 +58,11 @@ function ScheduleForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const scheduleDate = formatDateToSchedule({ date, hour, minute });
+
+    const scheduleDate = {
+      id: uuidv4(), date, hour, minute,
+    };
+
     setUserSchedules((prev) => [...prev, scheduleDate]);
     clearForm();
   }
@@ -72,6 +76,7 @@ function ScheduleForm() {
           placeholder="Selecione uma data..."
           onFocus={handleTypeDate}
           onChange={handleInputDate}
+          onBlur={handleInputDate}
           required
         />
       </div>
