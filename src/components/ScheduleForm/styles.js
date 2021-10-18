@@ -5,8 +5,24 @@ const Form = styled.form`
   margin-top: 2rem;
   margin-bottom: 1rem;
 
-  div:nth-last-child(2) input {
+  .container-hour div:nth-last-child(1) input {
     border-radius: 0 6px 6px 0;
+  }
+
+  .container-hour {
+    display: flex;
+  }
+
+  @media(max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+
+    .container-hour {
+      margin-bottom: 1rem;
+      div:first-child {
+        margin-right: 0.5rem;
+      }
+    }
   }
 `;
 
@@ -21,6 +37,7 @@ const Input = styled.input`
   outline: none;
   padding: 0.5rem 1rem;
   width: 7.1875rem;
+  appearance: none;
   transition: 0.25s ease-in;
 
   &:focus {
@@ -31,12 +48,21 @@ const Input = styled.input`
     color: #9f9f9f;
     font-weight: normal;
   }
+
+  @media(max-width: 992px) {
+   width: 100%;
+  }
 `;
 
 const InputDate = styled(Input)`
   width: 16.25rem;
   margin-right: 0.75rem;
   border-radius: 6px;
+
+  @media(max-width: 992px) {
+   width: 100%;
+   margin-bottom: 1rem; 
+  }
 `;
 
 const ScheduleButton = styled.button`
@@ -80,6 +106,10 @@ const ScheduleButton = styled.button`
       width: 100%;
     }
 
+  @media(max-width: 992px) {
+    margin: 0;
+    width: 100%;
+  }
 `;
 
 export {

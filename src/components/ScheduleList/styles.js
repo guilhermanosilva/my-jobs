@@ -5,6 +5,10 @@ const Container = styled.div`
   border-radius: 0.5rem;
   padding: 1rem;
   padding-bottom: 2rem;
+
+  @media(max-width: 992px) {
+    margin-top: 3rem;
+  }
 `;
 
 const ContainerCategoryIcons = styled.div`
@@ -60,6 +64,12 @@ const ContainerSchedule = styled.div`
       align-items: center;
       display: flex;
       font-size: 0.875rem;
+    }
+  }
+
+  @media(max-width: 992px) {
+    ul {
+      grid-template-columns: 1fr;
     }
   }
 `;

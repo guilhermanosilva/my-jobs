@@ -5,6 +5,11 @@ const month = [
   'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro',
 ];
 
+const monthShort = [
+  'jan', 'fev', 'mar', 'abr', 'mai', 'jun',
+  'jul', 'ago', 'set', 'out', 'nov', 'dez',
+];
+
 function getCurrentDate() {
   const date = new Date();
   const day = date.getDate().toString();
@@ -17,7 +22,13 @@ function getCurrentDate() {
   hour = addZero(hour);
   minutes = addZero(minutes);
 
-  return `${dayFormat} de ${month[mes]} de ${year} - ${hour}:${minutes}`;
+  const stringDate = `Hoje - ${dayFormat} de ${month[mes]} de ${year} - ${hour}:${minutes}`;
+  const stringDateShort = `${dayFormat} ${monthShort[mes]} ${year} - ${hour}:${minutes}`;
+
+  return {
+    stringDate,
+    stringDateShort,
+  };
 }
 
 export default getCurrentDate;

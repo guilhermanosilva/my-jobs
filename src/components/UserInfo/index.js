@@ -20,11 +20,13 @@ function UserInfo() {
   return (
     <ContainerUserInfo>
       <PerfilImage src={user.picture} alt="perfil" height={200} />
-      <strong>
-        {`${user.first_name} ${user.last_name}`}
-        <img src={Verified} alt="verified" />
-      </strong>
-      <small>{user.role}</small>
+      <div className="user-title">
+        <strong>
+          {`${user.first_name} ${user.last_name}`}
+          <img src={Verified} alt="verified" />
+        </strong>
+        <small>{user.role}</small>
+      </div>
       <p>
         <span>Altura:
           {` ${user.height?.substr(0, 1)}.${user.height?.substr(1)}`}

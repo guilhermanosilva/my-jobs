@@ -14,6 +14,8 @@ function ScheduleForm() {
   const [minute, setMinute] = useState('');
   const [inputType, setInputType] = useState('text');
 
+  const screenWidth = window.screen.width;
+
   const { setUserSchedules } = useContext(ScheduleContext);
 
   function handleTypeDate() {
@@ -80,31 +82,32 @@ function ScheduleForm() {
           required
         />
       </div>
-      <div>
-        <Input
-          value={hour}
-          type="text"
-          placeholder="Hora"
-          minLength={2}
-          maxLength={2}
-          onChange={handleInputHour}
-          required
-        />
-      </div>
-      <div>
-        <Input
-          value={minute}
-          type="text"
-          placeholder="Minuto"
-          minLength={2}
-          maxLength={2}
-          onChange={handleInputMinute}
-          required
-        />
+      <div className="container-hour">
+        <div>
+          <Input
+            value={hour}
+            type="text"
+            placeholder="Hora"
+            minLength={2}
+            maxLength={2}
+            onChange={handleInputHour}
+            required
+          />
+        </div>
+        <div>
+          <Input
+            value={minute}
+            type="text"
+            placeholder="Minuto"
+            minLength={2}
+            maxLength={2}
+            onChange={handleInputMinute}
+            required
+          />
+        </div>
       </div>
       <ScheduleButton type="submit">
-        <img src={Calendar} alt="calendar" />
-        |
+        {screenWidth > 992 && (<><img src={Calendar} alt="calendar" /> | </>)}
         <span> Agendar </span>
       </ScheduleButton>
     </Form>
